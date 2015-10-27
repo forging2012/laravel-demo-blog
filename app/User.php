@@ -36,4 +36,14 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+
+    //hasOne
+    public function post(){
+//        return $this->hasOne('App\Post', 'foreign_key');
+//        return $this->hasOne('App\Post', 'foreign_key', 'post_id');
+        return $this->hasOne('App\Post');
+
+    }
+
 }
