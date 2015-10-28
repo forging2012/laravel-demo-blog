@@ -26,3 +26,9 @@ $factory->define(App\Post::class, function (Faker\Generator $faker){
         'content' => $faker->paragraph(mt_rand(3,10)),
     ];
 });
+
+$factory->define(App\Comment::class, function (Faker\Generator $faker){
+    return [
+        'message' => $faker->sentence(mt_rand(3,5)),
+    ];
+});

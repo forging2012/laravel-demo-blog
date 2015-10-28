@@ -42,7 +42,8 @@ class User extends Model implements AuthenticatableContract,
     public function post(){
 //        return $this->hasOne('App\Post', 'foreign_key');
 //        return $this->hasOne('App\Post', 'foreign_key', 'post_id');
-        return $this->hasOne('App\Post');
+//        return $this->hasOne('App\Post');
+        return $this->hasMany('App\Post');
 
     }
 

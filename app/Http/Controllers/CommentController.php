@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Comment;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class PostController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +17,11 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
-        return view('post.index', compact('posts'));
+//        $comments = Post::find(1)->Comment();
+//        dd($comments);
+//        return $comments;
+        $comments = Comment::all();
+        return view('comment.index', compact('comments'));
     }
 
     /**
@@ -49,12 +53,26 @@ class PostController extends Controller
      */
     public function show($id)
     {
-//        $post = Post::findOrNew($id);
-//        return $post;
+//        $comment = Post::find(1)->comment();
+//        $comment = Post::all();
+//        $comment = Post::findOrFail(1)->comment();
+//        $comment = Post::find(1);
+//        return $comment->post->title;
+//        return view('comment.show', compact('comment'));
+//        dd($comments);
 
-        $post = Post::findOrFail($id);
-        return view('post.show', compact('post'));
+//        $comment = Comment::findOrFail($id);
+//        return view('comment.show', compact('comment'));
 
+//        $comment = Post::find($id)->comment();
+//        return view('comment.show', compact('comment'));
+
+//        $comment = Comment::find(1);
+//        echo $comment->post->title;
+
+        $comments = Post::findOrFail($id);
+        dd($comments);
+//        return view('comment.show', compact('comments'));
 
     }
 
